@@ -31,11 +31,11 @@ module.exports = {
 
     if (channel.type == "GUILD_STAGE_VOICE") {
       setTimeout(() => {
-        if (interaction.guild.me.voice.suppress == true) {
+        if (interaction.guild.members.me.voice.suppress == true) {
           try {
-            interaction.guild.me.voice.setSuppressed(false);
+            interaction.guild.members.me.voice.setSuppressed(false);
           } catch (e) {
-            interaction.guild.me.voice.setRequestToSpeak(true);
+            interaction.guild.members.me.voice.setRequestToSpeak(true);
           }
         }
       }, 2000); // Need this because discord api is buggy asf, and without this the bot will not request to speak on a stage - Darren

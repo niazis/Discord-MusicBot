@@ -17,9 +17,9 @@ module.exports = async (client, interaction) => {
 			return resolve(false);
 		}
 		if (
-			interaction.guild.members.me.voice.channel &&
+			interaction.guild.members.members.me.voice.channel &&
 			interaction.member.voice.channel.id !==
-			interaction.guild.members.me.voice.channel.id
+			interaction.guild.members.members.me.voice.channel.id
 		) {
 			await interaction.reply({
 				embeds: [
